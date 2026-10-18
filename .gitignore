@@ -1,0 +1,24 @@
+# Артефакти збирання/симуляції
+build/
+*.cf
+*.o
+*.vcd
+*.ghw
+*.fst
+work-obj*.cf
+uart_tb
+tb_uart
+e~*.o
+# Проміжні файли синтезу (звіти зберігаються в synth/reports/)
+synth/out/
+*.json
+*.asc
+*.bin
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+# ОС / редактори
+.DS_Store
+.vscode/
