@@ -22,3 +22,6 @@ __pycache__/
 # ОС / редактори
 .DS_Store
 .vscode/
+
+# Звіти синтезу (JSON) — комітяться
+!synth/reports/*.json
