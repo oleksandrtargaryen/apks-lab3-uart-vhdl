@@ -1,0 +1,1965 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+post (git sha1 0c11ea098be065e585a90a06e7b7da49936cf231, Release, AppleClang clang++ 21.0.0.21000334)
+
+-- Running command `
+  read_verilog /Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v;
+  synth_ice40 -top uart_top;
+  tee -o /Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/reports/yosys_stat_uart_top.txt stat' --
+
+1. Executing Verilog-2005 frontend: /Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v
+Parsing Verilog input from `/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v' to AST representation.
+Generating RTLIL representation for module `\uart_rx_16'.
+Generating RTLIL representation for module `\uart_tx_16'.
+Generating RTLIL representation for module `\baud_gen_50000000_115200_16'.
+Generating RTLIL representation for module `\uart_top'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH_ICE40 pass.
+
+2.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+2.2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \uart_top
+Used module:     \uart_rx_16
+Used module:     \uart_tx_16
+Used module:     \baud_gen_50000000_115200_16
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \uart_top
+Used module:     \uart_rx_16
+Used module:     \uart_tx_16
+Used module:     \baud_gen_50000000_115200_16
+Removed 0 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:885$199 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:876$198 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:867$197 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:858$196 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:849$195 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:840$194 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:831$193 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:822$192 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:668$135 in module uart_tx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:412$81 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:403$80 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:394$79 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:385$78 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:376$77 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:367$76 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:358$75 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:349$74 in module uart_rx_16.
+Marked 1 switch rules as full_case in process $proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:197$16 in module uart_rx_16.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 99 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:994$242'.
+  Set init value: \n39 = 5'00000
+Found init rule in `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:971$241'.
+  Set init value: \cnt = 5'00000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:947$231'.
+  Set init value: \n227 = 1'0
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:942$230'.
+  Set init value: \n226 = 1'0
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:937$229'.
+  Set init value: \n225 = 1'1
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:932$228'.
+  Set init value: \n224 = 1'0
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:927$227'.
+  Set init value: \n223 = 8'00000000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:922$226'.
+  Set init value: \n222 = 3'000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:917$225'.
+  Set init value: \n221 = 4'0000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:912$224'.
+  Set init value: \n220 = 2'00
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:656$223'.
+  Set init value: \done_reg = 1'0
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:651$222'.
+  Set init value: \busy_reg = 1'0
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:646$221'.
+  Set init value: \txd_reg = 1'1
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:641$220'.
+  Set init value: \pending = 1'0
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:636$219'.
+  Set init value: \shreg = 8'00000000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:631$218'.
+  Set init value: \bit_idx = 3'000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:626$217'.
+  Set init value: \tick_cnt = 4'0000
+Found init rule in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:621$216'.
+  Set init value: \state = 2'00
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:489$122'.
+  Set init value: \n438 = 1'0
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:484$121'.
+  Set init value: \n437 = 1'0
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:479$120'.
+  Set init value: \n436 = 1'0
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:474$119'.
+  Set init value: \n435 = 8'00000000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:469$118'.
+  Set init value: \n434 = 8'00000000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:464$117'.
+  Set init value: \n433 = 3'000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:459$116'.
+  Set init value: \n432 = 4'0000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:454$115'.
+  Set init value: \n431 = 1'1
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:449$114'.
+  Set init value: \n430 = 1'1
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:444$113'.
+  Set init value: \n429 = 1'1
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:439$112'.
+  Set init value: \n428 = 2'00
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:185$111'.
+  Set init value: \sample_reg = 1'0
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:180$110'.
+  Set init value: \ferr_reg = 1'0
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:175$109'.
+  Set init value: \valid_reg = 1'0
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:170$108'.
+  Set init value: \data_reg = 8'00000000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:165$107'.
+  Set init value: \shreg = 8'00000000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:160$106'.
+  Set init value: \bit_idx = 3'000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:155$105'.
+  Set init value: \tick_cnt = 4'0000
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:150$104'.
+  Set init value: \rx_prev = 1'1
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:145$103'.
+  Set init value: \rx_sync = 1'1
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:140$102'.
+  Set init value: \rx_meta = 1'1
+Found init rule in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:135$101'.
+  Set init value: \state = 2'00
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~18 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:994$242'.
+Creating decoders for process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:971$241'.
+Creating decoders for process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:997$240'.
+Creating decoders for process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:992$239'.
+Creating decoders for process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:947$231'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:942$230'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:937$229'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:932$228'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:927$227'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:922$226'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:917$225'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:912$224'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:656$223'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:651$222'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:646$221'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:641$220'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:636$219'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:631$218'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:626$217'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:621$216'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:945$215'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:940$214'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:935$213'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:930$212'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:925$211'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:920$210'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:915$209'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:910$208'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:885$199'.
+     1/1: $1\n193[0:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:876$198'.
+     1/1: $1\n190[0:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:867$197'.
+     1/1: $1\n188[0:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:858$196'.
+     1/1: $1\n186[0:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:849$195'.
+     1/1: $1\n184[7:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:840$194'.
+     1/1: $1\n182[2:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:831$193'.
+     1/1: $1\n180[3:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:822$192'.
+     1/1: $1\n178[1:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:668$135'.
+     1/1: $1\n67[1:0]
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:654$130'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:649$129'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:644$128'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:639$127'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:629$125'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124'.
+Creating decoders for process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:619$123'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:489$122'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:484$121'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:479$120'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:474$119'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:469$118'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:464$117'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:459$116'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:454$115'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:449$114'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:444$113'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:439$112'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:185$111'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:180$110'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:175$109'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:170$108'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:165$107'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:160$106'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:155$105'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:150$104'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:145$103'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:140$102'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:135$101'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:487$100'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:482$99'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:477$98'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:472$97'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:467$96'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:462$95'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:457$94'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:452$93'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:447$92'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:442$91'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:437$90'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:412$81'.
+     1/1: $1\n399[0:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:403$80'.
+     1/1: $1\n396[0:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:394$79'.
+     1/1: $1\n393[0:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:385$78'.
+     1/1: $1\n390[7:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:376$77'.
+     1/1: $1\n388[7:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:367$76'.
+     1/1: $1\n386[2:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:358$75'.
+     1/1: $1\n384[3:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:349$74'.
+     1/1: $1\n382[1:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:197$16'.
+     1/1: $1\n258[1:0]
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:183$11'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:178$10'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:173$9'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:158$6'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:148$4'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:143$3'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:138$2'.
+Creating decoders for process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:133$1'.
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\baud_gen_50000000_115200_16.\cnt' from process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232'.
+Removing init bit 1'0 for non-memory siginal `\baud_gen_50000000_115200_16.\cnt [0]` in process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232`.
+Removing init bit 1'0 for non-memory siginal `\baud_gen_50000000_115200_16.\cnt [1]` in process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232`.
+Removing init bit 1'0 for non-memory siginal `\baud_gen_50000000_115200_16.\cnt [2]` in process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232`.
+Removing init bit 1'0 for non-memory siginal `\baud_gen_50000000_115200_16.\cnt [3]` in process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232`.
+Removing init bit 1'0 for non-memory siginal `\baud_gen_50000000_115200_16.\cnt [4]` in process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232`.
+No latch inferred for signal `\uart_tx_16.\n193' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:885$199'.
+No latch inferred for signal `\uart_tx_16.\n190' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:876$198'.
+No latch inferred for signal `\uart_tx_16.\n188' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:867$197'.
+No latch inferred for signal `\uart_tx_16.\n186' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:858$196'.
+No latch inferred for signal `\uart_tx_16.\n184' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:849$195'.
+No latch inferred for signal `\uart_tx_16.\n182' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:840$194'.
+No latch inferred for signal `\uart_tx_16.\n180' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:831$193'.
+No latch inferred for signal `\uart_tx_16.\n178' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:822$192'.
+No latch inferred for signal `\uart_tx_16.\n67' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:668$135'.
+No latch inferred for signal `\uart_tx_16.\done_reg' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:654$130'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\done_reg` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:654$130`.
+No latch inferred for signal `\uart_tx_16.\busy_reg' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:649$129'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\busy_reg` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:649$129`.
+No latch inferred for signal `\uart_tx_16.\txd_reg' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:644$128'.
+Removing init bit 1'1 for non-memory siginal `\uart_tx_16.\txd_reg` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:644$128`.
+No latch inferred for signal `\uart_tx_16.\pending' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:639$127'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\pending` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:639$127`.
+No latch inferred for signal `\uart_tx_16.\shreg' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [0]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [1]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [2]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [3]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [4]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [5]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [6]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\shreg [7]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126`.
+No latch inferred for signal `\uart_tx_16.\bit_idx' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:629$125'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\bit_idx [0]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:629$125`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\bit_idx [1]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:629$125`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\bit_idx [2]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:629$125`.
+No latch inferred for signal `\uart_tx_16.\tick_cnt' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\tick_cnt [0]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\tick_cnt [1]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\tick_cnt [2]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\tick_cnt [3]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124`.
+No latch inferred for signal `\uart_tx_16.\state' from process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:619$123'.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\state [0]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:619$123`.
+Removing init bit 1'0 for non-memory siginal `\uart_tx_16.\state [1]` in process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:619$123`.
+No latch inferred for signal `\uart_rx_16.\n399' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:412$81'.
+No latch inferred for signal `\uart_rx_16.\n396' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:403$80'.
+No latch inferred for signal `\uart_rx_16.\n393' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:394$79'.
+No latch inferred for signal `\uart_rx_16.\n390' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:385$78'.
+No latch inferred for signal `\uart_rx_16.\n388' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:376$77'.
+No latch inferred for signal `\uart_rx_16.\n386' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:367$76'.
+No latch inferred for signal `\uart_rx_16.\n384' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:358$75'.
+No latch inferred for signal `\uart_rx_16.\n382' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:349$74'.
+No latch inferred for signal `\uart_rx_16.\n258' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:197$16'.
+No latch inferred for signal `\uart_rx_16.\sample_reg' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:183$11'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\sample_reg` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:183$11`.
+No latch inferred for signal `\uart_rx_16.\ferr_reg' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:178$10'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\ferr_reg` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:178$10`.
+No latch inferred for signal `\uart_rx_16.\valid_reg' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:173$9'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\valid_reg` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:173$9`.
+No latch inferred for signal `\uart_rx_16.\data_reg' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [0]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [1]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [2]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [3]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [4]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [5]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [6]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\data_reg [7]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8`.
+No latch inferred for signal `\uart_rx_16.\shreg' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [0]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [1]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [2]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [3]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [4]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [5]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [6]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\shreg [7]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7`.
+No latch inferred for signal `\uart_rx_16.\bit_idx' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:158$6'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\bit_idx [0]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:158$6`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\bit_idx [1]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:158$6`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\bit_idx [2]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:158$6`.
+No latch inferred for signal `\uart_rx_16.\tick_cnt' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\tick_cnt [0]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\tick_cnt [1]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\tick_cnt [2]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\tick_cnt [3]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5`.
+No latch inferred for signal `\uart_rx_16.\rx_prev' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:148$4'.
+Removing init bit 1'1 for non-memory siginal `\uart_rx_16.\rx_prev` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:148$4`.
+No latch inferred for signal `\uart_rx_16.\rx_sync' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:143$3'.
+Removing init bit 1'1 for non-memory siginal `\uart_rx_16.\rx_sync` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:143$3`.
+No latch inferred for signal `\uart_rx_16.\rx_meta' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:138$2'.
+Removing init bit 1'1 for non-memory siginal `\uart_rx_16.\rx_meta` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:138$2`.
+No latch inferred for signal `\uart_rx_16.\state' from process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:133$1'.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\state [0]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:133$1`.
+Removing init bit 1'0 for non-memory siginal `\uart_rx_16.\state [1]` in process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:133$1`.
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\baud_gen_50000000_115200_16.\n40' using process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:997$240'.
+  created $dff cell `$procdff$731' with positive edge clock.
+Creating register for signal `\baud_gen_50000000_115200_16.\n39' using process `\baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:992$239'.
+  created $dff cell `$procdff$732' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n227' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:945$215'.
+  created $dff cell `$procdff$733' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n226' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:940$214'.
+  created $dff cell `$procdff$734' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n225' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:935$213'.
+  created $dff cell `$procdff$735' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n224' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:930$212'.
+  created $dff cell `$procdff$736' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n223' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:925$211'.
+  created $dff cell `$procdff$737' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n222' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:920$210'.
+  created $dff cell `$procdff$738' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n221' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:915$209'.
+  created $dff cell `$procdff$739' with positive edge clock.
+Creating register for signal `\uart_tx_16.\n220' using process `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:910$208'.
+  created $dff cell `$procdff$740' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n438' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:487$100'.
+  created $dff cell `$procdff$741' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n437' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:482$99'.
+  created $dff cell `$procdff$742' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n436' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:477$98'.
+  created $dff cell `$procdff$743' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n435' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:472$97'.
+  created $dff cell `$procdff$744' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n434' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:467$96'.
+  created $dff cell `$procdff$745' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n433' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:462$95'.
+  created $dff cell `$procdff$746' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n432' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:457$94'.
+  created $dff cell `$procdff$747' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n431' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:452$93'.
+  created $dff cell `$procdff$748' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n430' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:447$92'.
+  created $dff cell `$procdff$749' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n429' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:442$91'.
+  created $dff cell `$procdff$750' with positive edge clock.
+Creating register for signal `\uart_rx_16.\n428' using process `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:437$90'.
+  created $dff cell `$procdff$751' with positive edge clock.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:994$242'.
+Removing empty process `baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:971$241'.
+Removing empty process `baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:997$240'.
+Removing empty process `baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:992$239'.
+Removing empty process `baud_gen_50000000_115200_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:969$232'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:947$231'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:942$230'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:937$229'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:932$228'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:927$227'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:922$226'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:917$225'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:912$224'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:656$223'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:651$222'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:646$221'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:641$220'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:636$219'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:631$218'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:626$217'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:621$216'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:945$215'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:940$214'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:935$213'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:930$212'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:925$211'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:920$210'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:915$209'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:910$208'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:885$199'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:885$199'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:876$198'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:876$198'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:867$197'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:867$197'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:858$196'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:858$196'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:849$195'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:849$195'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:840$194'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:840$194'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:831$193'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:831$193'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:822$192'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:822$192'.
+Found and cleaned up 1 empty switch in `\uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:668$135'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:668$135'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:654$130'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:649$129'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:644$128'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:639$127'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:634$126'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:629$125'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:624$124'.
+Removing empty process `uart_tx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:619$123'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:489$122'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:484$121'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:479$120'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:474$119'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:469$118'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:464$117'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:459$116'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:454$115'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:449$114'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:444$113'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:439$112'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:185$111'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:180$110'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:175$109'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:170$108'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:165$107'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:160$106'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:155$105'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:150$104'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:145$103'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:140$102'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:135$101'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:487$100'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:482$99'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:477$98'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:472$97'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:467$96'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:462$95'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:457$94'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:452$93'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:447$92'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:442$91'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:437$90'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:412$81'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:412$81'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:403$80'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:403$80'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:394$79'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:394$79'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:385$78'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:385$78'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:376$77'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:376$77'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:367$76'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:367$76'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:358$75'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:358$75'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:349$74'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:349$74'.
+Found and cleaned up 1 empty switch in `\uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:197$16'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:197$16'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:183$11'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:178$10'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:173$9'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:168$8'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:163$7'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:158$6'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:153$5'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:148$4'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:143$3'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:138$2'.
+Removing empty process `uart_rx_16.$proc$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:133$1'.
+Cleaned up 18 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+Optimizing module baud_gen_50000000_115200_16.
+Optimizing module uart_tx_16.
+<suppressed ~6 debug messages>
+Optimizing module uart_rx_16.
+<suppressed ~3 debug messages>
+
+2.4. Executing CHECK pass (checking for obvious problems).
+Checking module uart_top...
+Checking module baud_gen_50000000_115200_16...
+Checking module uart_tx_16...
+Checking module uart_rx_16...
+Found and reported 0 problems.
+
+2.5. Executing FLATTEN pass (flatten design).
+Deleting now unused module baud_gen_50000000_115200_16.
+Deleting now unused module uart_tx_16.
+Deleting now unused module uart_rx_16.
+<suppressed ~3 debug messages>
+
+2.6. Executing TRIBUF pass.
+
+2.7. Executing DEMINOUT pass (demote inout ports to input or output).
+
+2.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.9. Executing CHECK pass (checking for obvious problems).
+Checking module uart_top...
+Found and reported 0 problems.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 31 unused cells and 318 unused wires.
+<suppressed ~60 debug messages>
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 226 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 159 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 156 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~210 debug messages>
+Removed a total of 70 cells.
+
+2.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $flatten\u_tx.$ternary$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:689$142: \u_tx.n224 -> 1'1
+      Replacing known input bits on port A of cell $flatten\u_tx.$ternary$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:681$138: \u_tx.n224 -> 1'0
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~111 debug messages>
+
+2.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$624: { $auto$opt_reduce.cc:137:opt_pmux$756 $flatten\u_tx.$procmux$628_CMP }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$630: { $flatten\u_tx.$procmux$625_CMP $auto$opt_reduce.cc:137:opt_pmux$758 $flatten\u_tx.$procmux$628_CMP }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$684: { $auto$opt_reduce.cc:137:opt_pmux$760 $flatten\u_rx.$procmux$688_CMP }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$642: { $flatten\u_tx.$procmux$625_CMP $auto$opt_reduce.cc:137:opt_pmux$762 }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$690: { $auto$opt_reduce.cc:137:opt_pmux$764 $flatten\u_rx.$procmux$688_CMP }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$648: { $flatten\u_tx.$procmux$625_CMP $auto$opt_reduce.cc:137:opt_pmux$766 $flatten\u_tx.$procmux$627_CMP }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$696: { $auto$opt_reduce.cc:137:opt_pmux$768 $flatten\u_rx.$procmux$688_CMP }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$654: { $auto$opt_reduce.cc:137:opt_pmux$770 $flatten\u_tx.$procmux$626_CMP $flatten\u_tx.$procmux$627_CMP }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$702: { $auto$opt_reduce.cc:137:opt_pmux$772 $flatten\u_rx.$procmux$687_CMP }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$708: { $auto$opt_reduce.cc:137:opt_pmux$774 $flatten\u_rx.$procmux$686_CMP $flatten\u_rx.$procmux$687_CMP }
+  Optimizing cells in module \uart_top.
+Performed a total of 10 changes.
+
+2.11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 166 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 160 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 157 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+2.11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 0 unused cells and 54 unused wires.
+<suppressed ~1 debug messages>
+
+2.11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~119 debug messages>
+
+2.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$714: { $flatten\u_rx.$procmux$685_CMP $flatten\u_rx.$procmux$686_CMP $auto$opt_reduce.cc:137:opt_pmux$776 }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$660: { $flatten\u_tx.$procmux$625_CMP $auto$opt_reduce.cc:137:opt_pmux$778 }
+  Optimizing cells in module \uart_top.
+Performed a total of 2 changes.
+
+2.11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 159 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 158 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.11.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.11.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~107 debug messages>
+
+2.11.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.11.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 158 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.11.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.11.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.11.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.11.23. Finished fast OPT passes. (There is nothing left to do.)
+
+2.12. Executing FSM pass (extract and optimize FSM).
+
+2.12.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking uart_top.u_tx.n220 as FSM state register:
+    Register has an initialization value.
+Not marking uart_top.u_rx.n428 as FSM state register:
+    Register has an initialization value.
+
+2.12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.13. Executing OPT pass (performing simple optimizations).
+
+2.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 158 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~107 debug messages>
+
+2.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 158 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $flatten\u_baud.$procdff$732 ($dff) from module uart_top (D = \u_baud.n25 [4:0], Q = \u_baud.n39, rval = 5'00000).
+Adding SRST signal on $flatten\u_baud.$procdff$731 ($dff) from module uart_top (D = \u_baud.n29, Q = \u_baud.n40, rval = 1'0).
+Adding SRST signal on $flatten\u_tx.$procdff$740 ($dff) from module uart_top (D = \u_tx.n178, Q = \u_tx.n220, rval = 2'00).
+Adding EN signal on $auto$ff.cc:337:slice$783 ($sdff) from module uart_top (D = \u_tx.n178, Q = \u_tx.n220).
+Adding SRST signal on $flatten\u_tx.$procdff$739 ($dff) from module uart_top (D = \u_tx.n180, Q = \u_tx.n221, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$797 ($sdff) from module uart_top (D = \u_tx.n180, Q = \u_tx.n221).
+Adding SRST signal on $flatten\u_tx.$procdff$738 ($dff) from module uart_top (D = \u_tx.n182, Q = \u_tx.n222, rval = 3'000).
+Adding EN signal on $auto$ff.cc:337:slice$807 ($sdff) from module uart_top (D = \u_tx.n182, Q = \u_tx.n222).
+Adding SRST signal on $flatten\u_tx.$procdff$737 ($dff) from module uart_top (D = \u_tx.n184, Q = \u_tx.n223, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$819 ($sdff) from module uart_top (D = \u_tx.n184, Q = \u_tx.n223).
+Adding SRST signal on $flatten\u_tx.$procdff$736 ($dff) from module uart_top (D = \u_tx.n186, Q = \u_tx.n224, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$831 ($sdff) from module uart_top (D = \u_tx.n186, Q = \u_tx.n224).
+Adding SRST signal on $flatten\u_tx.$procdff$735 ($dff) from module uart_top (D = \u_tx.n188, Q = \u_tx.n225, rval = 1'1).
+Adding EN signal on $auto$ff.cc:337:slice$835 ($sdff) from module uart_top (D = \u_tx.n188, Q = \u_tx.n225).
+Adding SRST signal on $flatten\u_tx.$procdff$734 ($dff) from module uart_top (D = \u_tx.n190, Q = \u_tx.n226, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$845 ($sdff) from module uart_top (D = \u_tx.n190, Q = \u_tx.n226).
+Adding SRST signal on $flatten\u_tx.$procdff$733 ($dff) from module uart_top (D = \u_tx.n193, Q = \u_tx.n227, rval = 1'0).
+Adding SRST signal on $flatten\u_rx.$procdff$751 ($dff) from module uart_top (D = \u_rx.n382, Q = \u_rx.n428, rval = 2'00).
+Adding EN signal on $auto$ff.cc:337:slice$856 ($sdff) from module uart_top (D = \u_rx.n382, Q = \u_rx.n428).
+Adding SRST signal on $flatten\u_rx.$procdff$750 ($dff) from module uart_top (D = \uart_rxd, Q = \u_rx.n429, rval = 1'1).
+Adding SRST signal on $flatten\u_rx.$procdff$749 ($dff) from module uart_top (D = \u_rx.n429, Q = \u_rx.n430, rval = 1'1).
+Adding SRST signal on $flatten\u_rx.$procdff$748 ($dff) from module uart_top (D = \u_rx.n430, Q = \u_rx.n431, rval = 1'1).
+Adding SRST signal on $flatten\u_rx.$procdff$747 ($dff) from module uart_top (D = \u_rx.n384, Q = \u_rx.n432, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$871 ($sdff) from module uart_top (D = \u_rx.n384, Q = \u_rx.n432).
+Adding SRST signal on $flatten\u_rx.$procdff$746 ($dff) from module uart_top (D = \u_rx.n386, Q = \u_rx.n433, rval = 3'000).
+Adding EN signal on $auto$ff.cc:337:slice$881 ($sdff) from module uart_top (D = \u_rx.n386, Q = \u_rx.n433).
+Adding SRST signal on $flatten\u_rx.$procdff$745 ($dff) from module uart_top (D = \u_rx.n388, Q = \u_rx.n434, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$893 ($sdff) from module uart_top (D = \u_rx.n388, Q = \u_rx.n434).
+Adding SRST signal on $flatten\u_rx.$procdff$744 ($dff) from module uart_top (D = \u_rx.n390, Q = \u_rx.n435, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$901 ($sdff) from module uart_top (D = \u_rx.n390, Q = \u_rx.n435).
+Adding SRST signal on $flatten\u_rx.$procdff$743 ($dff) from module uart_top (D = \u_rx.n393, Q = \u_rx.n436, rval = 1'0).
+Adding SRST signal on $flatten\u_rx.$procdff$742 ($dff) from module uart_top (D = \u_rx.n396, Q = \u_rx.n437, rval = 1'0).
+
+2.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 21 unused cells and 21 unused wires.
+<suppressed ~42 debug messages>
+
+2.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~9 debug messages>
+
+2.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~82 debug messages>
+
+2.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$630: { $flatten\u_tx.$procmux$628_CMP $flatten\u_tx.$procmux$625_CMP }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$636: { $flatten\u_tx.$procmux$625_CMP $flatten\u_tx.$procmux$626_CMP $flatten\u_tx.$procmux$627_CMP }
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$642: $flatten\u_tx.$procmux$625_CMP
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$648: { $flatten\u_tx.$procmux$627_CMP $flatten\u_tx.$procmux$625_CMP }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$696: $flatten\u_rx.$procmux$688_CMP
+    New ctrl vector for $pmux cell $flatten\u_tx.$procmux$654: { $flatten\u_tx.$procmux$627_CMP $flatten\u_tx.$procmux$626_CMP }
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$702: $flatten\u_rx.$procmux$687_CMP
+    New ctrl vector for $pmux cell $flatten\u_rx.$procmux$708: { $flatten\u_rx.$procmux$687_CMP $flatten\u_rx.$procmux$686_CMP }
+  Optimizing cells in module \uart_top.
+Performed a total of 8 changes.
+
+2.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 187 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 176 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
+
+2.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 1 unused cells and 12 unused wires.
+<suppressed ~2 debug messages>
+
+2.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.13.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.13.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~82 debug messages>
+
+2.13.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.13.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 175 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.13.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.13.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.13.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.13.23. Finished fast OPT passes. (There is nothing left to do.)
+
+2.14. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$906 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$890 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$886 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$874 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$865 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$863 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$861 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$859 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$852 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$850 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$842 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$840 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$804 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$800 ($ne).
+Removed top 1 bits (of 2) from port B of cell uart_top.$auto$simple.cc:194:make_patterns_logic$790 ($ne).
+Removed top 27 bits (of 32) from port A of cell uart_top.$flatten\u_baud.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:980$234 ($add).
+Removed top 31 bits (of 32) from port B of cell uart_top.$flatten\u_baud.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:980$234 ($add).
+Removed top 27 bits (of 32) from port Y of cell uart_top.$flatten\u_baud.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:980$234 ($add).
+Removed top 1 bits (of 4) from port B of cell uart_top.$flatten\u_tx.$procmux$627_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell uart_top.$flatten\u_tx.$procmux$626_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell uart_top.$flatten\u_tx.$procmux$625_CMP0 ($eq).
+Removed top 29 bits (of 32) from port A of cell uart_top.$flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:747$164 ($add).
+Removed top 31 bits (of 32) from port B of cell uart_top.$flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:747$164 ($add).
+Removed top 29 bits (of 32) from port Y of cell uart_top.$flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:747$164 ($add).
+Removed top 1 bits (of 2) from port B of cell uart_top.$flatten\u_tx.$eq$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:735$161 ($eq).
+Removed top 28 bits (of 32) from port A of cell uart_top.$flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:715$152 ($add).
+Removed top 31 bits (of 32) from port B of cell uart_top.$flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:715$152 ($add).
+Removed top 28 bits (of 32) from port Y of cell uart_top.$flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:715$152 ($add).
+Removed top 1 bits (of 4) from port B of cell uart_top.$flatten\u_rx.$procmux$687_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell uart_top.$flatten\u_rx.$procmux$686_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell uart_top.$flatten\u_rx.$procmux$685_CMP0 ($eq).
+Removed top 28 bits (of 32) from port A of cell uart_top.$flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:280$44 ($add).
+Removed top 31 bits (of 32) from port B of cell uart_top.$flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:280$44 ($add).
+Removed top 28 bits (of 32) from port Y of cell uart_top.$flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:280$44 ($add).
+Removed top 29 bits (of 32) from port A of cell uart_top.$flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:270$41 ($add).
+Removed top 31 bits (of 32) from port B of cell uart_top.$flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:270$41 ($add).
+Removed top 29 bits (of 32) from port Y of cell uart_top.$flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:270$41 ($add).
+Removed top 1 bits (of 2) from port B of cell uart_top.$flatten\u_rx.$eq$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:254$38 ($eq).
+Removed top 1 bits (of 4) from port B of cell uart_top.$flatten\u_rx.$eq$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:224$25 ($eq).
+
+2.15. Executing PEEPOPT pass (run peephole optimizers).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.17. Executing SHARE pass (SAT-based resource sharing).
+
+2.18. Executing TECHMAP pass (map to technology primitives).
+
+2.18.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+2.18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+2.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.20. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.21. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module uart_top:
+  creating $macc model for $flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:715$152 ($add).
+  creating $macc model for $flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:747$164 ($add).
+  creating $macc model for $flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:280$44 ($add).
+  creating $macc model for $flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:270$41 ($add).
+  creating $macc model for $flatten\u_baud.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:980$234 ($add).
+  creating $alu model for $macc $flatten\u_baud.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:980$234.
+  creating $alu model for $macc $flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:270$41.
+  creating $alu model for $macc $flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:280$44.
+  creating $alu model for $macc $flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:747$164.
+  creating $alu model for $macc $flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:715$152.
+  creating $alu cell for $flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:715$152: $auto$alumacc.cc:578:replace_alu$912
+  creating $alu cell for $flatten\u_tx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:747$164: $auto$alumacc.cc:578:replace_alu$915
+  creating $alu cell for $flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:280$44: $auto$alumacc.cc:578:replace_alu$918
+  creating $alu cell for $flatten\u_rx.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:270$41: $auto$alumacc.cc:578:replace_alu$921
+  creating $alu cell for $flatten\u_baud.$add$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:980$234: $auto$alumacc.cc:578:replace_alu$924
+  created 5 $alu and 0 $macc cells.
+
+2.22. Executing OPT pass (performing simple optimizations).
+
+2.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 175 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~82 debug messages>
+
+2.22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 175 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.22.9. Finished fast OPT passes. (There is nothing left to do.)
+
+2.23. Executing MEMORY pass.
+
+2.23.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.23.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.23.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.23.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.23.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.23.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.23.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.23.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.23.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.23.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.25. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+2.26. Executing TECHMAP pass (map to technology primitives).
+
+2.26.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+2.26.2. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+2.26.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+2.27. Executing ICE40_BRAMINIT pass.
+
+2.28. Executing OPT pass (performing simple optimizations).
+
+2.28.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~119 debug messages>
+
+2.28.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 138 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.28.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:337:slice$855 ($sdff) from module uart_top (D = \u_tx.n168, Q = \u_tx.n227, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$909 ($sdff) from module uart_top (D = \u_rx.n349, Q = \u_rx.n436, rval = 1'0).
+Adding SRST signal on $auto$ff.cc:337:slice$910 ($sdff) from module uart_top (D = \u_rx.n352, Q = \u_rx.n437, rval = 1'0).
+
+2.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 9 unused cells and 9 unused wires.
+<suppressed ~18 debug messages>
+
+2.28.5. Rerunning OPT passes. (Removed registers in this run.)
+
+2.28.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~1 debug messages>
+
+2.28.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 139 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 134 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 133 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+2.28.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.28.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+2.28.10. Finished fast OPT passes.
+
+2.29. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.30. Executing OPT pass (performing simple optimizations).
+
+2.30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 133 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+2.30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+    Consolidated identical input bits for $mux cell $flatten\u_rx.$ternary$/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_top.v:228$27:
+      Old ports: A=2'10, B=2'00, Y=\u_rx.n287
+      New ports: A=1'1, B=1'0, Y=\u_rx.n287 [1]
+      New connections: \u_rx.n287 [0] = 1'0
+  Optimizing cells in module \uart_top.
+Performed a total of 1 changes.
+
+2.30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 133 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 132 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.30.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.30.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+2.30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.30.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 132 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.30.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.30.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.30.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.30.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.31. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+2.32. Executing TECHMAP pass (map to technology primitives).
+
+2.32.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+2.32.2. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+2.32.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $sdff.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_80_ice40_alu for cells of type $alu.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_80_ice40_alu for cells of type $alu.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~282 debug messages>
+
+2.33. Executing OPT pass (performing simple optimizations).
+
+2.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~215 debug messages>
+
+2.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 358 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 320 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 319 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~117 debug messages>
+Removed a total of 39 cells.
+
+2.33.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 2 unused cells and 240 unused wires.
+<suppressed ~3 debug messages>
+
+2.33.5. Finished fast OPT passes.
+
+2.34. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.34.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) uart_top.$auto$alumacc.cc:578:replace_alu$912.slice[0].carry: CO=\u_tx.n221 [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) uart_top.$auto$alumacc.cc:578:replace_alu$915.slice[0].carry: CO=\u_tx.n222 [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) uart_top.$auto$alumacc.cc:578:replace_alu$918.slice[0].carry: CO=\u_rx.n432 [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) uart_top.$auto$alumacc.cc:578:replace_alu$921.slice[0].carry: CO=\u_rx.n433 [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) uart_top.$auto$alumacc.cc:578:replace_alu$924.slice[0].carry: CO=\u_baud.n39 [0]
+
+2.34.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.34.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 317 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.34.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.34.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.34.6. Rerunning OPT passes. (Removed registers in this run.)
+
+2.34.7. Running ICE40 specific optimizations.
+
+2.34.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.34.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 317 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.34.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.34.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.34.12. Finished OPT passes. (There is nothing left to do.)
+
+2.35. Executing DFFLEGALIZE pass (convert FFs and LATCHes to types supported by the target).
+
+2.36. Executing TECHMAP pass (map to technology primitives).
+
+2.36.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `$_DFF_N_'.
+Generating RTLIL representation for module `$_DFF_P_'.
+Generating RTLIL representation for module `$_DFFE_NP_'.
+Generating RTLIL representation for module `$_DFFE_PP_'.
+Generating RTLIL representation for module `$_DFF_NP0_'.
+Generating RTLIL representation for module `$_DFF_NP1_'.
+Generating RTLIL representation for module `$_DFF_PP0_'.
+Generating RTLIL representation for module `$_DFF_PP1_'.
+Generating RTLIL representation for module `$_DFFE_NP0P_'.
+Generating RTLIL representation for module `$_DFFE_NP1P_'.
+Generating RTLIL representation for module `$_DFFE_PP0P_'.
+Generating RTLIL representation for module `$_DFFE_PP1P_'.
+Generating RTLIL representation for module `$_SDFF_NP0_'.
+Generating RTLIL representation for module `$_SDFF_NP1_'.
+Generating RTLIL representation for module `$_SDFF_PP0_'.
+Generating RTLIL representation for module `$_SDFF_PP1_'.
+Generating RTLIL representation for module `$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+2.36.2. Continuing TECHMAP pass.
+Using template $_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+Using template $_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+No more expansions possible.
+<suppressed ~79 debug messages>
+
+2.37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~3 debug messages>
+
+2.38. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping uart_top.$auto$alumacc.cc:578:replace_alu$915.slice[0].carry ($lut).
+Mapping uart_top.$auto$alumacc.cc:578:replace_alu$918.slice[0].carry ($lut).
+Mapping uart_top.$auto$alumacc.cc:578:replace_alu$921.slice[0].carry ($lut).
+Mapping uart_top.$auto$alumacc.cc:578:replace_alu$924.slice[0].carry ($lut).
+Mapping uart_top.$auto$alumacc.cc:578:replace_alu$912.slice[0].carry ($lut).
+
+2.39. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.39.1. Running ICE40 specific optimizations.
+
+2.39.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~100 debug messages>
+
+2.39.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 368 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 331 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~111 debug messages>
+Removed a total of 37 cells.
+
+2.39.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 1 unused cells and 392 unused wires.
+<suppressed ~4 debug messages>
+
+2.39.6. Rerunning OPT passes. (Removed registers in this run.)
+
+2.39.7. Running ICE40 specific optimizations.
+
+2.39.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.39.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 330 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.39.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.39.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.39.12. Finished OPT passes. (There is nothing left to do.)
+
+2.40. Executing CHECK pass (checking for obvious problems).
+Checking module uart_top...
+Found and reported 0 problems.
+
+2.41. Executing TECHMAP pass (map to technology primitives).
+
+2.41.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `$_DLATCH_N_'.
+Generating RTLIL representation for module `$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+2.41.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+2.42. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/abc9_model.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_CARRY_WRAPPER'.
+Successfully finished Verilog frontend.
+
+2.43. Executing ABC9 pass.
+
+2.43.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+2.43.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+2.43.3. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module uart_top.
+Found 0 SCCs.
+
+2.43.4. Executing ABC9_OPS pass (helper functions for ABC9).
+
+2.43.5. Executing TECHMAP pass (map to technology primitives).
+
+2.43.5.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+2.43.5.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~130 debug messages>
+
+2.43.6. Executing OPT pass (performing simple optimizations).
+
+2.43.6.1. Executing OPT_EXPR pass (perform const folding).
+
+2.43.6.2. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+2.43.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Removed 0 multiplexer ports.
+
+2.43.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+Performed a total of 0 changes.
+
+2.43.6.5. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+2.43.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.43.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+
+2.43.6.8. Executing OPT_EXPR pass (perform const folding).
+
+2.43.6.9. Finished fast OPT passes. (There is nothing left to do.)
+
+2.43.7. Executing TECHMAP pass (map to technology primitives).
+
+2.43.7.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_map.v' to AST representation.
+Lexer warning: The SystemVerilog keyword `bit' (at /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_map.v:35) is not recognized unless read_verilog is called with -sv!
+Generating RTLIL representation for module `$__ABC9_BARRIER_MAP'.
+Successfully finished Verilog frontend.
+
+2.43.7.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+2.43.8. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_model.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_BARRIER'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+2.43.9. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~116 debug messages>
+
+2.43.10. Executing ABC9_OPS pass (helper functions for ABC9).
+
+2.43.11. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+2.43.12. Executing TECHMAP pass (map to technology primitives).
+
+2.43.12.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+2.43.12.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+Using template SB_CARRY for cells of type SB_CARRY.
+Using template $paramod\SB_LUT4\LUT_INIT=16'0110100110010110 for cells of type SB_LUT4.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+No more expansions possible.
+<suppressed ~151 debug messages>
+
+2.43.13. Executing OPT pass (performing simple optimizations).
+
+2.43.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+<suppressed ~4 debug messages>
+
+2.43.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 30 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 20 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Computing hashes of 18 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+<suppressed ~29 debug messages>
+Removed a total of 12 cells.
+
+2.43.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.43.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.43.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 18 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.43.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.43.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+2.43.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.43.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.43.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.43.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_top.
+Performed a total of 0 changes.
+
+2.43.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_top'.
+Computing hashes of 18 cells of `\uart_top'.
+Finding duplicate cells in `\uart_top'.
+Removed a total of 0 cells.
+
+2.43.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.43.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_top..
+
+2.43.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_top.
+
+2.43.13.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.43.14. Executing AIGMAP pass (map logic to AIG).
+Module uart_top: replaced 117 cells with 502 new cells, skipped 327 cells.
+  replaced 3 cell types:
+       1 $_ANDNOT_
+      12 $_MUX_
+     104 $_OR_
+  not replaced 8 cell types:
+      79 $_AND_
+      60 $_NOT_
+       3 $scopeinfo
+      12 SB_DFFSR
+      45 SB_DFFESR
+      57 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000000010101
+      57 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000011001011
+      14 $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1
+
+2.43.14.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+2.43.14.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+2.43.14.3. Executing XAIGER2 backend.
+<suppressed ~380 debug messages>
+Extracted 428 AND gates and 0 wires from module `uart_top' to a netlist network with 211 inputs and 413 outputs.
+
+2.43.14.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+2.43.14.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     69/    229  and =     214  lev =    9 (1.28)  mem = 0.01 MB  box = 128  bb = 114
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f -r 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     69/    229  and =     193  lev =    7 (0.80)  mem = 0.01 MB  ch =   28  box = 128  bb = 114
+ABC: cst =       0  cls =     25  lit =      28  unused =     351  proof =     0
+ABC: + &if -W 250 -v 
+ABC: K = 4. Memory (bytes): Truth =    0. Cut =   64. Obj =  144. Set =  672. CutMin = no
+ABC: Node =     193.  Ch =    25.  Total mem =    0.12 MB. Peak cut mem =    0.02 MB.
+ABC: P:  Del = 1887.00.  Ar =      78.0.  Edge =      258.  Cut =      812.  T =     0.00 sec
+ABC: P:  Del = 1887.00.  Ar =      78.0.  Edge =      258.  Cut =      795.  T =     0.00 sec
+ABC: P:  Del = 1887.00.  Ar =      76.0.  Edge =      254.  Cut =      822.  T =     0.00 sec
+ABC: F:  Del = 1887.00.  Ar =      73.0.  Edge =      241.  Cut =      658.  T =     0.00 sec
+ABC: A:  Del = 1887.00.  Ar =      72.0.  Edge =      219.  Cut =      656.  T =     0.00 sec
+ABC: A:  Del = 1887.00.  Ar =      72.0.  Edge =      219.  Cut =      658.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =     69/    229  and =     162  lev =    8 (0.86)  mem = 0.01 MB  box = 128  bb = 114
+ABC: Mapping (K=4)  :  lut =     69  edge =     209  lev =    3 (0.46)  levB =    5  mem = 0.00 MB
+ABC: LUT = 69 : 2=21 30.4 %  3=25 36.2 %  4=23 33.3 %  Ave = 3.03
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &verify 
+ABC: Networks are equivalent.  Time =     0.01 sec
+ABC: + time 
+ABC: elapse: 0.01 seconds, total: 0.01 seconds
+
+2.43.14.6. Executing AIGER frontend.
+<suppressed ~10 debug messages>
+Removed 202 unused cells and 725 unused wires.
+
+2.43.14.7. Executing ABC_OPS_REINTEGRATE pass (reintegrate ABC mapped design into module).
+ABC RESULTS:              $lut cells:       75
+ABC RESULTS:   $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 cells:       14
+ABC RESULTS:           input signals:       27
+ABC RESULTS:          output signals:        6
+<suppressed ~298 debug messages>
+Removing temp directory.
+
+2.43.15. Executing TECHMAP pass (map to technology primitives).
+
+2.43.15.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__ABC9_BARRIER'.
+Successfully finished Verilog frontend.
+
+2.43.15.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+No more expansions possible.
+<suppressed ~21 debug messages>
+
+2.44. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+2.45. Executing TECHMAP pass (map to technology primitives).
+
+2.45.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `$_DFF_N_'.
+Generating RTLIL representation for module `$_DFF_P_'.
+Generating RTLIL representation for module `$_DFFE_NP_'.
+Generating RTLIL representation for module `$_DFFE_PP_'.
+Generating RTLIL representation for module `$_DFF_NP0_'.
+Generating RTLIL representation for module `$_DFF_NP1_'.
+Generating RTLIL representation for module `$_DFF_PP0_'.
+Generating RTLIL representation for module `$_DFF_PP1_'.
+Generating RTLIL representation for module `$_DFFE_NP0P_'.
+Generating RTLIL representation for module `$_DFFE_NP1P_'.
+Generating RTLIL representation for module `$_DFFE_PP0P_'.
+Generating RTLIL representation for module `$_DFFE_PP1P_'.
+Generating RTLIL representation for module `$_SDFF_NP0_'.
+Generating RTLIL representation for module `$_SDFF_NP1_'.
+Generating RTLIL representation for module `$_SDFF_PP0_'.
+Generating RTLIL representation for module `$_SDFF_PP1_'.
+Generating RTLIL representation for module `$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+2.45.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 22 unused cells and 605 unused wires.
+
+2.46. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:       89
+  1-LUT                6
+  2-LUT               26
+  3-LUT               34
+  4-LUT               23
+  with \SB_CARRY    (#0)    9
+  with \SB_CARRY    (#1)    9
+
+Eliminating LUTs.
+Number of LUTs:       89
+  1-LUT                6
+  2-LUT               26
+  3-LUT               34
+  4-LUT               23
+  with \SB_CARRY    (#0)    9
+  with \SB_CARRY    (#1)    9
+
+Combining LUTs.
+Number of LUTs:       82
+  1-LUT                6
+  2-LUT               18
+  3-LUT               29
+  4-LUT               29
+  with \SB_CARRY    (#0)    9
+  with \SB_CARRY    (#1)    9
+
+Eliminated 0 LUTs.
+Combined 7 LUTs.
+<suppressed ~358 debug messages>
+
+2.47. Executing TECHMAP pass (map to technology primitives).
+
+2.47.1. Executing Verilog-2005 frontend: /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `$lut'.
+Successfully finished Verilog frontend.
+
+2.47.2. Continuing TECHMAP pass.
+Using template $paramod$81222ef5610a5fda47edb055a14a06ce3f531e9d$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000100 for cells of type $lut.
+Using template $paramod$66e741791413519a466d4f44240bc83d3a191818$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$e2d96f36ef28053ecd27167cd95b944485ac3146$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9$lut for cells of type $lut.
+Using template $paramod$5a8dec98fa0483f3fd99eb443e24ef5e9fd77eeb$lut for cells of type $lut.
+Using template $paramod$f4a57baab64c324d23e33ace5aa73e6c32ea0405$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11011001 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101110 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$7a0b348a7069d0c8f44afe945e212fcf3f3fd64c$lut for cells of type $lut.
+Using template $paramod$de657bb4a9eb44c575919cc9893c0bd50eeaabfb$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110010 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$1b451b6a5c429d839d24a3a83b10c38249001b47$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010101 for cells of type $lut.
+Using template $paramod$c5f3c57a6d466a2f42208bafb8985b96ce884440$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001100 for cells of type $lut.
+Using template $paramod$d6ca727e39f31d51d29072e0f33aa09c65e37336$lut for cells of type $lut.
+Using template $paramod$9f6bc32305fc769fa11e4327bee073e3fbe84018$lut for cells of type $lut.
+Using template $paramod$f81ecf3eb88491df8fecf1e071b57debc429282a$lut for cells of type $lut.
+Using template $paramod$51336411d3d7410f539e9a60c87e0ec872f5fc25$lut for cells of type $lut.
+Using template $paramod$30305e55a780880b9c824fe3509a4d981acb0f2b$lut for cells of type $lut.
+Using template $paramod$86a69f95bdbfc36792b7c7498d3544468c88bd9a$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101010 for cells of type $lut.
+Using template $paramod$39fea1c845fe0f56a461ac64484e7bbd858aff3b$lut for cells of type $lut.
+Using template $paramod$bff60da521de773f8caf46fbc0845c3d7d3e2310$lut for cells of type $lut.
+Using template $paramod$6e4a86e6f1a5dc8f826898a131e83cdba4a4fc9e$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$4d7f17f71543a1e7fc1835bd79c4827a43f2e844$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010001 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$686a7a43173f50c1d443a4fb0ca7fe1a2af8c670$lut for cells of type $lut.
+Using template $paramod$f65cf6380214e831938c4f25f730307ae86218f7$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~547 debug messages>
+Removed 0 unused cells and 178 unused wires.
+
+2.48. Executing AUTONAME pass.
+Renamed 234 objects in module uart_top.
+<suppressed ~234 debug messages>
+
+2.49. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `uart_top'. Setting top module to uart_top.
+
+2.49.1. Analyzing design hierarchy..
+Top module:  \uart_top
+
+2.49.2. Analyzing design hierarchy..
+Top module:  \uart_top
+Removed 0 unused modules.
+
+2.50. Printing statistics.
+
+=== uart_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      130 wires
+      316 wire bits
+      130 public wires
+      316 public wire bits
+       11 ports
+       25 port bits
+        3 cells
+        3   $scopeinfo
+      148 submodules
+        9   SB_CARRY
+       45   SB_DFFESR
+       12   SB_DFFSR
+       82   SB_LUT4
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+        3 uart_top
+
+        +----------Count including submodules.
+        | 
+      130 wires
+      316 wire bits
+      130 public wires
+      316 public wire bits
+       11 ports
+       25 port bits
+        - memories
+        - memory bits
+        - processes
+        3 cells
+        3   $scopeinfo
+      148 submodules
+        9   SB_CARRY
+       45   SB_DFFESR
+       12   SB_DFFSR
+       82   SB_LUT4
+
+2.51. Executing CHECK pass (checking for obvious problems).
+Checking module uart_top...
+Found and reported 0 problems.
+
+3. Printing statistics.
+
+=== uart_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      130 wires
+      316 wire bits
+      130 public wires
+      316 public wire bits
+       11 ports
+       25 port bits
+      151 cells
+        3   $scopeinfo
+        9   SB_CARRY
+       45   SB_DFFESR
+       12   SB_DFFSR
+       82   SB_LUT4
+
+End of script. Logfile hash: 787b115d8a, time: 0.49s, user: 0.45s, system: 0.01s, MEM: 31.28 MB peak
+Yosys 0.70+post (git sha1 0c11ea098be065e585a90a06e7b7da49936cf231, Release, AppleClang clang++ 21.0.0.21000334)
+Time spent: 71% 21x read_verilog (0 sec), 7% 1x abc9_exe (0 sec), ...

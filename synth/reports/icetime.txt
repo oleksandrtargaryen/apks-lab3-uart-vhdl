@@ -1,0 +1,40 @@
+
+icetime topological timing analysis report
+==========================================
+
+Report for critical path:
+-------------------------
+
+        lc40_1_28_1 (LogicCell40) [clk] -> lcout: 0.640 ns
+     0.640 ns net_3027 (tx_SB_LUT4_O_I3_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_I3_O_SB_LUT4_O_I3[1])
+        odrv_1_28_3027_7584 (Odrv4) I -> O: 0.372 ns
+        t91 (Span4Mux_v3) I -> O: 0.337 ns
+        t90 (LocalMux) I -> O: 0.330 ns
+        inmux_4_31_20173_20210 (InMux) I -> O: 0.260 ns
+        lc40_4_31_5 (LogicCell40) in0 -> lcout: 0.449 ns
+     2.386 ns net_16034 (u_uart.u_tx.n125_SB_LUT4_I0_I3[3])
+        t301 (LocalMux) I -> O: 0.330 ns
+        inmux_4_31_20152_20186 (InMux) I -> O: 0.260 ns
+        lc40_4_31_1 (LogicCell40) in0 -> lcout: 0.449 ns
+     3.424 ns net_16030 (u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_I3[3])
+        t295 (LocalMux) I -> O: 0.330 ns
+        inmux_3_31_16087_16104 (InMux) I -> O: 0.260 ns
+        lc40_3_31_0 (LogicCell40) in1 -> lcout: 0.400 ns
+     4.413 ns net_11952 (u_uart.u_tx.n247_SB_DFFESR_Q_E)
+        odrv_3_31_11952_14687 (Odrv12) I -> O: 0.540 ns
+        t242 (LocalMux) I -> O: 0.330 ns
+        inmux_3_30_15974_16026 (CEMux) I -> O: 0.603 ns
+     5.886 ns net_16026 (u_uart.u_tx.n247_SB_DFFESR_Q_E)
+        lc40_3_30_6 (LogicCell40) ce [setup]: 0.000 ns
+     5.886 ns net_11835 (u_uart.u_tx.n125_SB_LUT4_I0_I3[2])
+
+Resolvable net names on path:
+     0.640 ns ..  1.938 ns tx_SB_LUT4_O_I3_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_I3_O_SB_LUT4_O_I3[1]
+     2.386 ns ..  2.976 ns u_uart.u_tx.n125_SB_LUT4_I0_I3[3]
+     3.424 ns ..  4.014 ns u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_I3[3]
+     4.413 ns ..  5.886 ns u_uart.u_tx.n247_SB_DFFESR_Q_E
+                  lcout -> u_uart.u_tx.n125_SB_LUT4_I0_I3[2]
+
+Total number of logic levels: 4
+Total path delay: 5.89 ns (169.89 MHz)
+

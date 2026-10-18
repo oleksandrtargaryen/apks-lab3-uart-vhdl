@@ -1,0 +1,45 @@
+=== Підсумок синтезу: uart_echo_top (iCE40 HX8K ct256), CLK_FREQ=50000000, BAUD=115200 ===
+Інструменти: GHDL 5.1.1 | Yosys 0.70+post | nextpnr-ice40 0.11.1_2
+
+--- Yosys stat (uart_top, ядро) ---
+      151 cells
+        9   SB_CARRY
+       45   SB_DFFESR
+       12   SB_DFFSR
+       82   SB_LUT4
+
+--- Yosys stat (uart_echo_top) ---
+      157 cells
+        9   SB_CARRY
+        2   SB_DFF
+       52   SB_DFFESR
+       10   SB_DFFSR
+       80   SB_LUT4
+
+--- nextpnr: використання пристрою ---
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:     116/   7680     1%
+Info: 	        ICESTORM_RAM:       0/     32     0%
+Info: 	               SB_IO:      12/    206     5%
+Info: 	               SB_GB:       2/      8    25%
+Info: 	        ICESTORM_PLL:       0/      2     0%
+Info: 	         SB_WARMBOOT:       0/      1     0%
+
+
+--- nextpnr: часовий аналіз ---
+(перший рядок — оцінка до трасування, останній — після трасування)
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 161.08 MHz (PASS at 50.00 MHz)
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 3.17 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 4.36 ns
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 179.53 MHz (PASS at 50.00 MHz)
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 3.22 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 4.39 ns
+
+--- icetime ---
+// Timing estimate: 5.89 ns (169.89 MHz)
+Total number of logic levels: 4
+Total path delay: 5.89 ns (169.89 MHz)
+
+--- Пост-синтезна симуляція (netlist uart_top) ---
+tb_uart.vhd:395:9:@1605090ns:(report note): SUMMARY: TX frames checked = 8, RX bytes checked = 10, framing errors detected = 1 (expected 1)
+tb_uart.vhd:399:9:@1605090ns:(report note): TEST PASSED

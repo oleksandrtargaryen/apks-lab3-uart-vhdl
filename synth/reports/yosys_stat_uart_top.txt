@@ -1,0 +1,20 @@
+
+3. Printing statistics.
+
+=== uart_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      130 wires
+      316 wire bits
+      130 public wires
+      316 public wire bits
+       11 ports
+       25 port bits
+      151 cells
+        3   $scopeinfo
+        9   SB_CARRY
+       45   SB_DFFESR
+       12   SB_DFFSR
+       82   SB_LUT4
+

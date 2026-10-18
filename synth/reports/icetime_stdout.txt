@@ -1,0 +1,6 @@
+// Reading input .pcf file..
+// Reading input .asc file..
+// Reading 8k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 5.89 ns (169.89 MHz)
+// Checking 20.00 ns (50.00 MHz) clock constraint: PASSED.

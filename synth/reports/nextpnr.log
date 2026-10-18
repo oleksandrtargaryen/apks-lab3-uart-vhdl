@@ -1,0 +1,186 @@
+Info: constrained 'clk' to bel 'X0/Y16/io1'
+Info: constrained 'rst_n' to bel 'X0/Y6/io0'
+Info: constrained 'rx' to bel 'X24/Y33/io0'
+Info: constrained 'tx' to bel 'X24/Y33/io1'
+Info: constrained 'led[0]' to bel 'X7/Y33/io1'
+Info: constrained 'led[1]' to bel 'X6/Y33/io1'
+Info: constrained 'led[2]' to bel 'X5/Y33/io1'
+Info: constrained 'led[3]' to bel 'X4/Y33/io1'
+Info: constrained 'led[4]' to bel 'X4/Y33/io0'
+Info: constrained 'led[5]' to bel 'X3/Y33/io1'
+Info: constrained 'led[6]' to bel 'X3/Y33/io0'
+Info: constrained 'led[7]' to bel 'X1/Y33/io0'
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:       45 LCs used as LUT4 only
+Info:       35 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:       29 LCs used as DFF only
+Info: Packing carries..
+Info:        0 LCs used as CARRY only
+Info: Packing indirect carry+LUT pairs...
+Info:        0 LUTs merged into carry LCs
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 64)
+Info: promoting rst_n_SB_DFF_D_Q_SB_DFF_D_Q_SB_LUT4_I3_O [reset] (fanout 56)
+Info: Constraining chains...
+Info:        5 LCs used to legalise carry chains.
+Info: Checksum: 0xb5465765
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:     116/   7680     1%
+Info: 	        ICESTORM_RAM:       0/     32     0%
+Info: 	               SB_IO:      12/    206     5%
+Info: 	               SB_GB:       2/      8    25%
+Info: 	        ICESTORM_PLL:       0/      2     0%
+Info: 	         SB_WARMBOOT:       0/      1     0%
+
+Info: Placed 12 cells based on constraints.
+Info: Creating initial analytic placement for 102 cells, random placement wirelen = 3679.
+Info:     at initial placer iter 0, wirelen = 96
+Info:     at initial placer iter 1, wirelen = 101
+Info:     at initial placer iter 2, wirelen = 97
+Info:     at initial placer iter 3, wirelen = 101
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type ALL: wirelen solved = 97, spread = 304, legal = 370; time = 0.00s
+Info:     at iteration #2, type ALL: wirelen solved = 106, spread = 256, legal = 313; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 118, spread = 245, legal = 357; time = 0.00s
+Info:     at iteration #4, type ALL: wirelen solved = 141, spread = 233, legal = 341; time = 0.00s
+Info:     at iteration #5, type ALL: wirelen solved = 152, spread = 257, legal = 340; time = 0.00s
+Info:     at iteration #6, type ALL: wirelen solved = 164, spread = 233, legal = 359; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 186, spread = 241, legal = 355; time = 0.00s
+Info: HeAP Placer Time: 0.01s
+Info:   of which solving equations: 0.01s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 9, wirelen = 313
+Info:   at iteration #5: temp = 0.000000, timing cost = 7, wirelen = 283
+Info:   at iteration #10: temp = 0.000000, timing cost = 5, wirelen = 241
+Info:   at iteration #10: temp = 0.000000, timing cost = 5, wirelen = 241 
+Info: SA placement time 0.01s
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 161.08 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 3.17 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 4.36 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 13792,  14033) |******************************************************** 
+Info: [ 14033,  14274) | 
+Info: [ 14274,  14515) | 
+Info: [ 14515,  14756) | 
+Info: [ 14756,  14997) | 
+Info: [ 14997,  15238) | 
+Info: [ 15238,  15479) |********** 
+Info: [ 15479,  15720) |** 
+Info: [ 15720,  15961) |** 
+Info: [ 15961,  16202) |************************* 
+Info: [ 16202,  16443) |** 
+Info: [ 16443,  16684) |** 
+Info: [ 16684,  16925) |********* 
+Info: [ 16925,  17166) |*********** 
+Info: [ 17166,  17407) |*********** 
+Info: [ 17407,  17648) |************ 
+Info: [ 17648,  17889) |** 
+Info: [ 17889,  18130) |************* 
+Info: [ 18130,  18371) |*************** 
+Info: [ 18371,  18612) |************************************************************ 
+Info: Checksum: 0x2ccc8360
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 344 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:        373 |       24        340 |   24   340 |         0|       0.03       0.03|
+Info: Routing complete.
+Info: Router1 time 0.03s
+Info: Checksum: 0xa39bf8d2
+
+Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  0.54  0.54 Source u_uart.u_baud.n67_SB_DFFSR_Q_D_SB_LUT4_O_LC.O
+Info:    routing  1.27  1.81 Net tx_SB_LUT4_O_I3_SB_DFFESR_Q_D_SB_LUT4_O_I2_SB_LUT4_I3_O_SB_LUT4_O_I3[1] (1,28) -> (4,31)
+Info:                          Sink u_uart.u_tx.n125_SB_LUT4_I0_I3_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  2.13 Source u_uart.u_tx.n125_SB_LUT4_I0_I3_SB_LUT4_O_LC.O
+Info:    routing  0.59  2.72 Net u_uart.u_tx.n125_SB_LUT4_I0_I3[3] (4,31) -> (4,31)
+Info:                          Sink u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
+Info:                          Defined in:
+Info:                               /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.38  3.10 Source u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:    routing  0.59  3.68 Net u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_I3[3] (4,31) -> (3,31)
+Info:                          Sink u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  4.00 Source u_uart.u_tx.n247_SB_DFFESR_Q_E_SB_LUT4_O_LC.O
+Info:    routing  1.47  5.47 Net u_uart.u_tx.n247_SB_DFFESR_Q_E (3,31) -> (3,30)
+Info:                          Sink u_uart.u_tx.n247_SB_DFFESR_Q_1_D_SB_LUT4_O_LC.CEN
+Info:      setup  0.10  5.57 Source u_uart.u_tx.n247_SB_DFFESR_Q_1_D_SB_LUT4_O_LC.CEN
+Info: 1.65 ns logic, 3.92 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source rst_n$sb_io.D_IN_0
+Info:    routing  2.75  2.75 Net rst_n$SB_IO_IN (0,6) -> (1,30)
+Info:                          Sink rst_n_SB_DFF_D_DFFLC.I0
+Info:                          Defined in:
+Info:                               /Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_echo_top.v:1060.11-1060.16
+Info:      setup  0.47  3.22 Source rst_n_SB_DFF_D_DFFLC.I0
+Info: 0.47 ns logic, 2.75 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  0.54  0.54 Source tx_SB_LUT4_O_I3_SB_DFFESR_Q_D_SB_LUT4_O_LC.O
+Info:    routing  2.57  3.11 Net tx_SB_LUT4_O_I3 (5,30) -> (24,31)
+Info:                          Sink tx_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /opt/homebrew/Cellar/yosys/0.70/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  3.43 Source tx_SB_LUT4_O_LC.O
+Info:    routing  0.96  4.39 Net tx$SB_IO_OUT (24,31) -> (24,33)
+Info:                          Sink tx$sb_io.D_OUT_0
+Info:                          Defined in:
+Info:                               /Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/synth/out/uart_echo_top.v:1062.11-1062.13
+Info: 0.86 ns logic, 3.53 ns routing
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 179.53 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 3.22 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 4.39 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 14430,  14636) |*+
+Info: [ 14636,  14842) |****+
+Info: [ 14842,  15048) |*****************+
+Info: [ 15048,  15254) |******+
+Info: [ 15254,  15460) |***************************************************+
+Info: [ 15460,  15666) |**+
+Info: [ 15666,  15872) |***+
+Info: [ 15872,  16078) |*********+
+Info: [ 16078,  16284) | 
+Info: [ 16284,  16490) | 
+Info: [ 16490,  16696) |+
+Info: [ 16696,  16902) |******************+
+Info: [ 16902,  17108) |*+
+Info: [ 17108,  17314) | 
+Info: [ 17314,  17520) |********+
+Info: [ 17520,  17726) |******+
+Info: [ 17726,  17932) |***************+
+Info: [ 17932,  18138) |****+
+Info: [ 18138,  18344) | 
+Info: [ 18344,  18550) |************************************************************ 
+
+Info: Program finished normally.

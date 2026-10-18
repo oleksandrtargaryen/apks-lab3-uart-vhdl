@@ -1,0 +1,95 @@
+
+3. Printing statistics.
+
+=== baud_gen_50000000_115200_16 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       16 wires
+       23 wire bits
+       16 public wires
+       23 public wire bits
+        3 ports
+        3 port bits
+       17 cells
+        3   SB_CARRY
+        6   SB_DFFSR
+        8   SB_LUT4
+
+=== uart_rx_16 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       59 wires
+      154 wire bits
+       59 public wires
+      154 public wire bits
+        9 ports
+       17 port bits
+       69 cells
+        3   SB_CARRY
+       25   SB_DFFESR
+        6   SB_DFFSR
+       35   SB_LUT4
+
+=== uart_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       18 wires
+       39 wire bits
+       18 public wires
+       39 public wire bits
+       11 ports
+       25 port bits
+        3 submodules
+        1   baud_gen_50000000_115200_16
+        1   uart_rx_16
+        1   uart_tx_16
+
+=== uart_tx_16 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       66 wires
+      158 wire bits
+       66 public wires
+      158 public wire bits
+        9 ports
+       17 port bits
+       66 cells
+        3   SB_CARRY
+       20   SB_DFFESR
+        1   SB_DFFSR
+       42   SB_LUT4
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      152 uart_top
+       17 baud_gen_50000000_115200_16
+       69 uart_rx_16
+       66 uart_tx_16
+
+        +----------Count including submodules.
+        | 
+      159 wires
+      374 wire bits
+      159 public wires
+      374 public wire bits
+       32 ports
+       62 port bits
+        - memories
+        - memory bits
+        - processes
+      152 cells
+        9   SB_CARRY
+       45   SB_DFFESR
+       13   SB_DFFSR
+       85   SB_LUT4
+        3 submodules
+        1   baud_gen_50000000_115200_16
+        1   uart_rx_16
+        1   uart_tx_16
+

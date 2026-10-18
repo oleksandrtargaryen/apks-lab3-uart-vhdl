@@ -1,0 +1,25 @@
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:253:9:@0ms:(report note): UART TB: CLK_FREQ=50000000 Hz, BAUD=115200, DIVISOR=27, T_BIT=8640 ns, real baud=115740
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:270:9:@210ns:(report note): RESET: OK (TXD idle = 1, tx_busy = 0)
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:275:9:@210ns:(report note): === PHASE 1: transmitter test ===
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:305:13:@87150ns:(report note): TX: sent 0x55, TB decoder got 0x55, frame 86400 ns - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:305:13:@174090ns:(report note): TX: sent 0xA3, TB decoder got 0xA3, frame 86400 ns - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:305:13:@261030ns:(report note): TX: sent 0x00, TB decoder got 0x00, frame 86400 ns - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:305:13:@347970ns:(report note): TX: sent 0xFF, TB decoder got 0xFF, frame 86400 ns - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:318:9:@520790ns:(report note): TX: request during busy ignored - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:323:9:@520790ns:(report note): === PHASE 2: receiver test (external device) ===
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@607197ns:(report note): RX nominal: received 0x3C - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@693597ns:(report note): RX nominal: received 0xC5 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@779997ns:(report note): RX nominal: received 0x81 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@886269ns:(report note): RX baud -3%: received 0x5A - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@987357ns:(report note): RX baud +3%: received 0xA5 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:352:9:@1024077ns:(report note): RX glitch (T_BIT/4): rejected - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:361:9:@1119117ns:(report note): RX framing error (stop=0): rx_frame_err detected - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@1222797ns:(report note): RX after frame error: received 0x42 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:373:9:@1240077ns:(report note): === PHASE 3: loopback test (TXD -> RXD) ===
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@1331330ns:(report note): LOOPBACK: received 0x55 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@1418270ns:(report note): LOOPBACK: received 0xA3 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@1505210ns:(report note): LOOPBACK: received 0x00 - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:245:13:@1592150ns:(report note): LOOPBACK: received 0xFF - OK
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:395:9:@1605090ns:(report note): SUMMARY: TX frames checked = 8, RX bytes checked = 10, framing errors detected = 1 (expected 1)
+/Users/santamorina/Desktop/7sem/apks/labs+repos/apks-lab3-uart-vhdl/tb/tb_uart.vhd:399:9:@1605090ns:(report note): TEST PASSED
+simulation finished @1605290ns
