@@ -33,6 +33,11 @@ sim/
 scripts/
   plot_waves.py   — PNG-осцилограми з VCD (matplotlib)
   render_fsm.py   — PNG-діаграми станів (Graphviz)
+synth/
+  uart_echo_top.vhd — верхній рівень для плати (echo + LED)
+  uart_hx8k.pcf     — призначення виводів iCE40 HX8K CT256
+  run_synth.sh      — GHDL → Yosys → nextpnr → icepack → icetime
+  reports/          — звіти синтезу, P&R, часового аналізу
 docs/
   fsm.md          — діаграми станів (Mermaid) та опис логіки приймача
   img/            — осцилограми та діаграми FSM
@@ -102,13 +107,46 @@ TEST PASSED
 | Помилка кадру | ![](docs/img/wave_rx_frame_err.png) |
 | Петльовий тест 0xA3 | ![](docs/img/wave_loopback.png) |
 
-## Синтез
+## Синтез і часовий аналіз (етап 4)
 
-Синтез і часовий аналіз (етап 4: Yosys + nextpnr для Lattice iCE40 HX8K, ct256)
-виконуються після схвалення етапу 3 у гілці `feature/develop/4-synthesis`
-(`make synth`).
+Цільова ПЛІС: **Lattice iCE40 HX8K, корпус CT256** (плата iCE40-HX8K Breakout Board).
+Маршрут — відкриті САПР: GHDL (VHDL → Verilog) → Yosys `synth_ice40` → nextpnr-ice40
+(розміщення/трасування, STA) → icepack → icetime; додатково — пост-синтезна симуляція
+netlist `uart_top` тим самим тестбенчем.
+
+```bash
+make synth        # або ./synth/run_synth.sh; звіти — synth/reports/
+```
+
+Для плати використовується обгортка `synth/uart_echo_top.vhd` (режим «луна»: прийнятий
+байт передається назад і показується на 8 світлодіодах), виводи — `synth/uart_hx8k.pcf`
+(clk J3, rx B10, tx B12, led B5…C3, rst_n N3 з pull-up).
+
+| Ресурс | uart_top (ядро) | uart_echo_top (плата) |
+|---|---|---|
+| SB_LUT4 | 82 | 80 |
+| Тригери (SB_DFF*) | 57 | 64 |
+| SB_CARRY | 9 | 9 |
+| Логічні комірки ICESTORM_LC | — | 116 / 7680 (1,5 %) |
+| SB_IO | — | 12 / 206 (5,8 %) |
+| SB_GB (глобальні буфери) | — | 2 / 8 |
+
+По модулях (Yosys, `-noflatten`): baud_gen — 8 LUT / 6 FF, uart_tx — 42 LUT / 21 FF,
+uart_rx — 35 LUT / 31 FF.
+
+| Часові характеристики | Значення |
+|---|---|
+| Обмеження (системний такт) | 50 МГц (20 нс) |
+| **Fmax (nextpnr, після трасування)** | **179,5 МГц** (5,57 нс) — PASS |
+| Fmax (icetime, оцінка) | 169,9 МГц (5,89 нс, 4 рівні логіки) |
+| Запас | 3,6× за частотою, slack ≈ 14,4 нс |
+| Частота tick (16 × 115 200) | 1,8432 МГц номінально (реально 1,8519 МГц) — clock enable, не окремий такт |
+
+Протокол вимагає лише, щоб системний такт був щонайменше в 2 × 16 разів вищим за
+швидкість передачі (DIVISOR ≥ 2), тобто ≥ 3,7 МГц для 115 200 бод. Досягнута Fmax
+179,5 МГц теоретично дозволяє UART до ≈ 5,6 Мбод (179,5 МГц / 32).
 
 ## Git-процес
 
 `master` → `develop` → `feature/develop/3-uart` (RTL + тестбенч) → PR `lab2/testbench`
-у `develop` з рев'ю викладача → після схвалення — `feature/develop/4-synthesis`.
+у `develop` з рев'ю викладача → після схвалення — `feature/develop/4-synthesis` (синтез).
