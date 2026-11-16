@@ -1,0 +1,43 @@
+# CI: функціональна верифікація UART у GHDL (лабораторна робота №3)
+name: GHDL simulation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install GHDL
+        uses: ghdl/setup-ghdl@v1
+        with:
+          version: latest
+          backend: mcode
+
+      - name: GHDL version
+        run: ghdl --version
+
+      - name: Simulation (fast mode, 781250 baud)
+        run: NO_VCD=1 FAST=1 ./sim/run_sim.sh
+
+      - name: Simulation (real parameters, 50 MHz / 115200 baud)
+        run: ./sim/run_sim.sh
+
+      - name: Check "TEST PASSED"
+        run: |
+          grep -q "TEST PASSED" build/sim_log.txt
+          grep -E "SUMMARY|TEST PASSED" build/sim_log.txt
+
+      - name: Upload VCD and log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uart-sim
+          path: |
+            build/uart.vcd
+            build/sim_log.txt
